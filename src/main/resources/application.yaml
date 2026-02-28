@@ -1,10 +1,19 @@
 spring:
+  # This tells Spring to stop immediately rather than waiting for active tasks
+  lifecycle:
+    timeout-per-shutdown-phase: 0s
+
   application:
     name: rsocket
+
   rsocket:
     server:
       transport: tcp
       port: 8787
+
 logging:
   level:
+    # Captures your custom pattern logs
     dev.dead: DEBUG
+    # Useful for seeing the RSocket server lifecycle
+    org.springframework.messaging.rsocket: DEBUG
