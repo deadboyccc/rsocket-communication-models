@@ -1,3 +1,10 @@
 spring:
   application:
     name: rsocket
+  rsocket:
+    server:
+      transport: tcp
+      port: 8787
+logging:
+  level:
+    dev.dead: DEBUG
